@@ -27,7 +27,7 @@ struct WeatherListScreen: View {
         case .addNewCity:
             AddCityScreen().environmentObject(store)
         case .settings:
-            SettingsScreen().envoronmentObject(store)
+            SettingsScreen().environmentObject(store)
         }
         })
         .navigationBarItems(leading : Button(action : {
@@ -45,7 +45,7 @@ struct WeatherListScreen: View {
 
 struct WeatherListScreen_Preview: PreviewProvider{
     static var previews : some View{
-        return WeatherListScreen()
+        return WeatherListScreen().environmentObject(Store())
     }
 }
 struct WeatherCell : View{
